@@ -10,5 +10,6 @@ import java.util.List;
 @Repository
 public interface ArticleDAORepository extends JpaRepository<Article,Long> {
 
-   public List<Article> findByPrice(double price);
+   public List<Article> findByCaloriesLessThan(Integer calories);
+   public List<Article> findByPriceBetween(double min, double max);
 }

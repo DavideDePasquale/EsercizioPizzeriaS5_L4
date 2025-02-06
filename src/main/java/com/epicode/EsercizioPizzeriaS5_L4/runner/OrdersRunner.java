@@ -1,6 +1,7 @@
 package com.epicode.EsercizioPizzeriaS5_L4.runner;
 
 import com.epicode.EsercizioPizzeriaS5_L4.model.Article;
+import com.epicode.EsercizioPizzeriaS5_L4.model.Drink;
 import com.epicode.EsercizioPizzeriaS5_L4.model.Pizza;
 import com.epicode.EsercizioPizzeriaS5_L4.model.Topping;
 import com.epicode.EsercizioPizzeriaS5_L4.service.OrderService;
@@ -44,10 +45,27 @@ public class OrdersRunner implements CommandLineRunner {
 //        orderService.insertArticle(f);
 //        Article g = orderService.createToppingTomato();
 //        orderService.insertArticle(g);
-       List<Topping> listaArticoliTopping =  orderService.getAllToppings();
-       listaArticoliTopping.forEach(System.out::println);
-       List<Pizza> listaPizze = orderService.getAllPizza();
-       listaPizze.forEach(System.out::println);
+
+
+
+
+//       List<Topping> listaArticoliTopping =  orderService.getAllToppings();
+//       listaArticoliTopping.forEach(System.out::println);
+//      List<Pizza> listaPizze = orderService.getAllPizza();
+//      listaPizze.forEach(System.out::println);
+//        List<Drink> listaDrink = orderService.getAllDrinks();
+//        listaDrink.forEach(System.out::println);
+
+        List<Article> listaProdotti = orderService.getAll();
+        listaProdotti.forEach(System.out::println);
+
+        System.out.println("LISTA PRODOTTI PIù CALORICI : ");
+        List<Article> articoliPocoCalorici = orderService.getProductsWithMustCalories();
+        articoliPocoCalorici.forEach(System.out::println);
+
+        System.out.println("LISTA PRODOTTI CHE COSTANO FRA 5€ E 8€ : ");
+        List<Article> articoli = orderService.getArticoliTraDueImporti();
+        articoli.forEach(System.out::println);
 
     }
 }

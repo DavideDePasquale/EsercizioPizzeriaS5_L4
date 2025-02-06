@@ -116,9 +116,9 @@ public class OrderService {
         System.out.println("Articolo aggiunto al DB!");
     }
 
-//    public List<Article> getAll(){
-//        return articledb.findAll();
-//    }
+    public List<Article> getAll(){
+      return articledb.findAll();
+   }
 
 
     public List<Pizza> getAllPizza(){
@@ -129,6 +129,14 @@ public class OrderService {
     }
     public List<Drink> getAllDrinks(){
         return drinkdb.findAll();
+    }
+    public List<Article> getProductsWithMustCalories(){
+        List<Article> listaArticoliConMenoCalorie = articledb.findByCaloriesLessThan(30);
+        return listaArticoliConMenoCalorie;
+    }
+    public List<Article> getArticoliTraDueImporti(){
+        List<Article> listaArticoliCompresiDiPrezzo = articledb.findByPriceBetween(5.00,8.00);
+        return listaArticoliCompresiDiPrezzo;
     }
 
 }

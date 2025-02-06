@@ -54,7 +54,6 @@ public class Pizza extends Article {
         return "Pizza{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", toppingList=" + toppingList +
                 ", id=" + id +
                 ", calories=" + calories +
                 ", price=" + price +
