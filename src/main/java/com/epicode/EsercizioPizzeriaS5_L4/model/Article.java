@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "articles")
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class Article {
+public class Article {
 
     @Id
     @GeneratedValue
@@ -15,6 +15,9 @@ public abstract class Article {
     protected int calories;
     @Column(nullable = false)
     protected double price;
+
+    public Article() {
+    }
 
     public Article(int calories, double price) {
         this.calories = calories;

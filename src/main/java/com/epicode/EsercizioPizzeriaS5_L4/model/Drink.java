@@ -2,6 +2,7 @@ package com.epicode.EsercizioPizzeriaS5_L4.model;
 
 import jakarta.persistence.*;
 import jakarta.persistence.Table;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "drinks")
@@ -11,6 +12,10 @@ public class Drink extends Article {
     private Long id;
     @Column(nullable = false)
     private String name;
+
+    public Drink() {
+        super();
+    }
 
     public Drink(int calories, double price, String name) {
         super(calories, price);

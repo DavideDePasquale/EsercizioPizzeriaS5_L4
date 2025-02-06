@@ -18,6 +18,10 @@ public class Pizza extends Article {
     @OneToMany(mappedBy = "pizza")
     private List<Topping> toppingList;
 
+    public Pizza() {
+        super();
+    }
+
     public Pizza(int calories, double price, String name) {
         super(calories, price);
         this.name = name;
@@ -41,14 +45,19 @@ public class Pizza extends Article {
         return toppingList;
     }
 
+    public void setToppingList(List<Topping> toppingList) {
+        this.toppingList = toppingList;
+    }
+
     @Override
     public String toString() {
         return "Pizza{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", toppingList=" + toppingList +
+                ", id=" + id +
                 ", calories=" + calories +
                 ", price=" + price +
                 '}';
     }
-
 }
